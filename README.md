@@ -16,7 +16,7 @@ Earth Resilience Dashboard is an AI + NASA-data-powered platform that helps urba
 ## 🚀 Quick Start
 
 ```bash
-git clone <repo>
+git clone https://github.com/AadarshJain07/earthresilence.git
 cd earth-resilience-dashboard
 npm install
 npm run dev
