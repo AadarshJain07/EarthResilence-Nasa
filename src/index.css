@@ -1,0 +1,205 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+  :root {
+    /* Core Earth & Space Theme */
+    --background: 217 44% 9%;           /* Deep space */
+    --foreground: 210 100% 95%;         /* Bright white for contrast */
+
+    --card: 217 33% 17%;                /* Elevated surface */
+    --card-foreground: 210 100% 95%;    /* Bright white text */
+
+    --popover: 217 33% 17%;             /* Match card */
+    --popover-foreground: 210 100% 95%; /* Bright white text */
+
+    /* NASA Mission Control Colors */
+    --primary: 231 64% 28%;             /* Deep space blue */
+    --primary-foreground: 210 100% 95%; /* Bright white */
+    --primary-glow: 231 80% 60%;        /* Glowing blue accent */
+
+    /* Earth Green System */
+    --secondary: 123 46% 34%;           /* Earth green */
+    --secondary-foreground: 210 100% 95%; /* Bright white */
+    --secondary-glow: 123 60% 50%;      /* Glowing green */
+
+    /* Climate Data Visualization */
+    --muted: 217 20% 25%;               /* Muted surface */
+    --muted-foreground: 210 20% 70%;    /* Muted text */
+
+    /* NASA Orange Accent */
+    --accent: 25 100% 50%;              /* NASA orange */
+    --accent-foreground: 217 44% 9%;    /* Dark text on orange */
+    --accent-glow: 25 100% 65%;         /* Glowing orange */
+
+    /* Alert & Status Colors */
+    --destructive: 0 85% 55%;           /* Climate alert red */
+    --destructive-foreground: 210 100% 95%; /* White text */
+    
+    --success: 123 60% 45%;             /* Success green */
+    --warning: 38 90% 55%;              /* Warning amber */
+    --info: 200 80% 55%;                /* Info blue */
+
+    /* Interactive Elements */
+    --border: 217 20% 25%;              /* Subtle borders */
+    --input: 217 33% 20%;               /* Input backgrounds */
+    --ring: 231 80% 60%;                /* Focus rings */
+
+    /* Gamification Colors */
+    --xp-gold: 45 100% 60%;             /* XP/coins color */
+    --badge-legendary: 280 100% 70%;    /* Legendary badge */
+    --streak-fire: 15 100% 60%;         /* Streak indicators */
+
+    /* Earth Atmosphere Gradients */
+    --gradient-atmosphere: linear-gradient(135deg, hsl(231, 64%, 28%) 0%, hsl(200, 80%, 35%) 50%, hsl(123, 46%, 34%) 100%);
+    --gradient-aurora: linear-gradient(90deg, hsl(280, 100%, 70%) 0%, hsl(200, 80%, 60%) 50%, hsl(123, 60%, 50%) 100%);
+    --gradient-surface: linear-gradient(180deg, hsl(217, 33%, 17%) 0%, hsl(217, 44%, 9%) 100%);
+    --gradient-glow: radial-gradient(circle, hsl(231, 80%, 60% / 0.3) 0%, transparent 70%);
+
+    /* Shadows & Effects */
+    --shadow-orbital: 0 20px 40px -10px hsl(231, 80%, 10% / 0.8);
+    --shadow-glow: 0 0 30px hsl(231, 80%, 60% / 0.4);
+    --shadow-card: 0 8px 32px -8px hsl(217, 44%, 5% / 0.6);
+
+    /* Animation Timing */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .light {
+    /* Light mode - for day-time Earth view */
+    --background: 200 30% 95%;           /* Light sky blue */
+    --foreground: 217 44% 15%;           /* Dark text */
+    --card: 0 0% 100%;                   /* Pure white cards */
+    --card-foreground: 217 44% 15%;      /* Dark text */
+    --primary: 231 64% 45%;              /* Lighter space blue */
+    --secondary: 123 46% 50%;            /* Brighter earth green */
+    --muted: 210 20% 85%;                /* Light muted */
+    --muted-foreground: 217 20% 40%;     /* Dark muted text */
+    --border: 210 20% 80%;               /* Light borders */
+  }
+
+  /* Sidebar theme - Mission Control aesthetic */
+  .sidebar-theme {
+    --sidebar-background: 217 33% 17%;
+    --sidebar-foreground: 210 100% 95%;
+    --sidebar-primary: 231 64% 28%;
+    --sidebar-primary-foreground: 210 100% 95%;
+    --sidebar-accent: 217 20% 25%;
+    --sidebar-accent-foreground: 210 100% 95%;
+    --sidebar-border: 217 20% 25%;
+    --sidebar-ring: 231 80% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image: 
+      radial-gradient(circle at 20% 80%, hsl(231, 80%, 60% / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(123, 60%, 50% / 0.1) 0%, transparent 50%);
+  }
+
+  /* Scrollbar styling for space theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary-glow));
+  }
+}
+
+@layer components {
+  /* Gamification Elements */
+  .xp-glow {
+    @apply text-yellow-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.6)];
+  }
+  
+  .badge-glow {
+    @apply animate-pulse drop-shadow-[0_0_12px_rgba(168,85,247,0.8)];
+  }
+  
+  .streak-fire {
+    @apply text-orange-500 drop-shadow-[0_0_8px_rgba(249,115,22,0.8)];
+  }
+
+  /* Interactive Elements */
+  .glassmorphism {
+    @apply backdrop-blur-lg bg-card/30 border border-border/50;
+  }
+  
+  .orbital-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(59,130,246,0.4)];
+  }
+  
+  .data-point {
+    @apply relative overflow-hidden rounded-lg p-4;
+    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
+  }
+  
+  .data-point::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: var(--gradient-glow);
+  }
+  
+  .data-point:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Earth visualization effects */
+  .earth-glow {
+    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.6));
+  }
+  
+  .atmosphere-ring {
+    @apply absolute inset-0 rounded-full;
+    background: conic-gradient(from 0deg, 
+      hsl(var(--primary-glow) / 0.8), 
+      hsl(var(--secondary-glow) / 0.6), 
+      hsl(var(--accent-glow) / 0.4), 
+      hsl(var(--primary-glow) / 0.8)
+    );
+    animation: rotate 20s linear infinite;
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+}
